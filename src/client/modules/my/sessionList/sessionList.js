@@ -18,13 +18,18 @@ export default class SessionList extends LightningElement
         );
     }
 
-    handleSessionClick(event) {
+    handleSessionClick(event)
+    {
         const index = event.currentTarget.dataset.index;
         const navigateEvent = new CustomEvent('navigate', {
-            detail: {
+            detail:
+            {
+                state: 'details',
                 sessionId: this.sessions[index].id
             }
         });
         this.dispatchEvent(navigateEvent);
     }
+
+    
 }
